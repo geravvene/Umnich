@@ -31,6 +31,7 @@ function calculate(data) {
           : price - stop * (step + 2);
 
         if (step < 2) {
+          if (flag!=1){
           zabrali[step] =
             Math.ceil((volume.at(-1) * 100) / 2) *
             dollar *
@@ -38,6 +39,8 @@ function calculate(data) {
             stop *
             100;
           volume[step + 1] = Math.floor((volume.at(-1) * 100) / 2) / 100;
+          }
+          else {zabrali[step] = volume.at(-1) * dollar * (+itog) * stop * 10000;}
         }
         if (step == 2) {
           zabrali[step] = volume.at(-1) * dollar * (+itog) * stop * 10000;
