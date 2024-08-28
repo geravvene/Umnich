@@ -5,7 +5,6 @@ function toFixed(num, size) {
 function calculate(data) {
   const { price, buy, volume_, stop, price_of_punkt, itog } = data;
   const dollar = 10;
-
   let flag = +itog;
   let step;
 
@@ -41,7 +40,7 @@ function calculate(data) {
           volume[step + 1] = Math.floor((volume.at(-1) * 100) / 2) / 100;
         }
         if (step == 2) {
-          zabrali[step] = volume.at(-1) * dollar * (+itog-1) * stop * 10000;
+          zabrali[step] = volume.at(-1) * dollar * (+itog) * stop * 10000;
         }
         stop_loss[step + 2] = buy
           ? price + stop * (step + 1)
